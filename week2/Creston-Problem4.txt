@@ -1,0 +1,6 @@
+The memory of the crestonw instance.
+
+ubuntu@ip-10-0-6-145:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:         498436       43524      118124        1752      336788      422004
+Swap:             0           0           0
