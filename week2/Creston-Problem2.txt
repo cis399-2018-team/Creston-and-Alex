@@ -1,0 +1,2 @@
+The public IP address of a given instance can be found selecting the instance you wish and viewing the window in the bottom
+of the EC2 console where all the instance information is displayed. The public IP address is listed next to IPv4 Public IP.
