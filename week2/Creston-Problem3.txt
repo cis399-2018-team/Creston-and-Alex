@@ -1,0 +1,11 @@
+The disk space for crestonw instance.
+
+ubuntu@ip-10-0-6-145:~$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              241228       0    241228   0% /dev
+tmpfs              49844    1728     48116   4% /run
+/dev/xvda1       8065444 1241788   6807272  16% /
+tmpfs             249216       0    249216   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs             249216       0    249216   0% /sys/fs/cgroup
+tmpfs              49844       0     49844   0% /run/user/1000
