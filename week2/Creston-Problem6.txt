@@ -1,0 +1,20 @@
+The network configuration of the crestonw instance.
+
+ubuntu@ip-10-0-6-145:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 0a:25:87:50:5f:aa  
+          inet addr:10.0.6.145  Bcast:10.0.6.255  Mask:255.255.255.0
+          inet6 addr: fe80::825:87ff:fe50:5faa/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:50264 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:11875 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:73453432 (73.4 MB)  TX bytes:931362 (931.3 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:192 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:192 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:14456 (14.4 KB)  TX bytes:14456 (14.4 KB)
