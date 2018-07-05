@@ -1,0 +1,2 @@
+Instance ID for crestonw : i-049ac1602fff133fc
+Private IP for crestonw  : 10.0.6.145
