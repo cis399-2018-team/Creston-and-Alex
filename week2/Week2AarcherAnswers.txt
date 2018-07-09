@@ -1,0 +1,871 @@
+1) Aarcher1 - InstanceID: i-0cca67093ee51de26 - privateIP: 10.0.6.98
+   Aarcher2 - InstanceID: i-0e9e001d78b6fd6d9 - privateIP: 10.0.6.146
+   
+2) It's in the EC2 console, under the description for a given instance.
+
+3)ubuntu@ip-10-0-6-98:~$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              241228       0    241228   0% /dev
+tmpfs              49844    5488     44356  12% /run
+/dev/xvda1       8065444 1287864   6761196  17% /
+tmpfs             249216       0    249216   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs             249216       0    249216   0% /sys/fs/cgroup
+tmpfs              49844       0     49844   0% /run/user/1000
+
+
+4)ubuntu@ip-10-0-6-98:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:         498436       46052       25572        5512      426812      410968
+Swap:             0           0           0
+
+5)
+   ubuntu@ip-10-0-6-98:~$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  1.0  37832  4988 ?        Ss   Jul06   0:03 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jul06   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Jul06   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Jul06   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    Jul06   0:00 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    Jul06   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    Jul06   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    Jul06   0:01 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    Jul06   0:00 [kdevtmpfs]
+root        12  0.0  0.0      0     0 ?        S<   Jul06   0:00 [netns]
+root        13  0.0  0.0      0     0 ?        S<   Jul06   0:00 [perf]
+root        14  0.0  0.0      0     0 ?        S    Jul06   0:00 [xenwatch]
+root        15  0.0  0.0      0     0 ?        S    Jul06   0:00 [xenbus]
+root        17  0.0  0.0      0     0 ?        S    Jul06   0:00 [khungtaskd]
+root        18  0.0  0.0      0     0 ?        S<   Jul06   0:00 [writeback]
+root        19  0.0  0.0      0     0 ?        SN   Jul06   0:00 [ksmd]
+root        20  0.0  0.0      0     0 ?        S<   Jul06   0:00 [crypto]
+root        21  0.0  0.0      0     0 ?        S<   Jul06   0:00 [kintegrityd]
+root        22  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        23  0.0  0.0      0     0 ?        S<   Jul06   0:00 [kblockd]
+root        24  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ata_sff]
+root        25  0.0  0.0      0     0 ?        S<   Jul06   0:00 [md]
+root        26  0.0  0.0      0     0 ?        S<   Jul06   0:00 [devfreq_wq]
+root        29  0.0  0.0      0     0 ?        S    Jul06   0:00 [kswapd0]
+root        30  0.0  0.0      0     0 ?        S<   Jul06   0:00 [vmstat]
+root        31  0.0  0.0      0     0 ?        S    Jul06   0:00 [fsnotify_mark]
+root        32  0.0  0.0      0     0 ?        S    Jul06   0:00 [ecryptfs-kthre
+root        48  0.0  0.0      0     0 ?        S<   Jul06   0:00 [kthrotld]
+root        49  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        50  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        51  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        52  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        53  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        54  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        55  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        56  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        57  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        58  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        59  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        60  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        61  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        62  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        63  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        64  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        65  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        66  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        67  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        68  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        69  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        70  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        71  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        72  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        73  0.0  0.0      0     0 ?        S    Jul06   0:00 [scsi_eh_0]
+root        74  0.0  0.0      0     0 ?        S<   Jul06   0:00 [scsi_tmf_0]
+root        75  0.0  0.0      0     0 ?        S    Jul06   0:00 [scsi_eh_1]
+root        76  0.0  0.0      0     0 ?        S<   Jul06   0:00 [scsi_tmf_1]
+root        78  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root        82  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ipv6_addrconf]
+root        96  0.0  0.0      0     0 ?        S<   Jul06   0:00 [deferwq]
+root       258  0.0  0.0      0     0 ?        S<   Jul06   0:00 [raid5wq]
+root       290  0.0  0.0      0     0 ?        S<   Jul06   0:00 [bioset]
+root       314  0.0  0.0      0     0 ?        S    Jul06   0:00 [jbd2/xvda1-8]
+root       315  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ext4-rsv-conve
+root       386  0.0  0.0      0     0 ?        S<   Jul06   0:00 [iscsi_eh]
+root       387  0.0  0.6  27704  3012 ?        Ss   Jul06   0:01 /lib/systemd/sy
+root       389  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ib_addr]
+root       391  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ib_mcast]
+root       392  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ib_nl_sa_wq]
+root       395  0.0  0.0      0     0 ?        S<   Jul06   0:00 [ib_cm]
+root       396  0.0  0.0      0     0 ?        S<   Jul06   0:00 [iw_cm_wq]
+root       398  0.0  0.0      0     0 ?        S<   Jul06   0:00 [rdma_cm]
+root       417  0.0  0.0      0     0 ?        S    Jul06   0:00 [kauditd]
+root       442  0.0  0.2 102968  1484 ?        Ss   Jul06   0:00 /sbin/lvmetad -
+root       472  0.0  0.7  42588  3820 ?        Ss   Jul06   0:00 /lib/systemd/sy
+systemd+   523  0.0  0.4 100324  2340 ?        Ssl  Jul06   0:00 /lib/systemd/sy
+root       547  0.0  0.0      0     0 ?        S<   Jul06   0:00 [kworker/0:1H]
+root       971  0.0  0.5  16116  2848 ?        Ss   Jul06   0:00 /sbin/dhclient
+root      1098  0.0  0.0   5220   148 ?        Ss   Jul06   0:05 /sbin/iscsid
+root      1099  0.0  0.7   5720  3504 ?        S<Ls Jul06   0:20 /sbin/iscsid
+root      1100  0.0  0.1   4396   684 ?        Ss   Jul06   0:00 /usr/sbin/acpid
+message+  1102  0.0  0.6  42900  3392 ?        Ss   Jul06   0:00 /usr/bin/dbus-d
+daemon    1111  0.0  0.4  26044  2004 ?        Ss   Jul06   0:00 /usr/sbin/atd -
+root      1118  0.0  0.5 636696  2876 ?        Ssl  Jul06   0:00 /usr/bin/lxcfs
+root      1125  0.0  0.5  28616  2892 ?        Ss   Jul06   0:00 /lib/systemd/sy
+root      1128  0.0  1.0 272944  5124 ?        Ssl  Jul06   0:03 /usr/lib/accoun
+root      1133  0.0  0.4  26068  2336 ?        Ss   Jul06   0:00 /usr/sbin/cron
+syslog    1144  0.0  0.6 260628  3112 ?        Ssl  Jul06   0:00 /usr/sbin/rsysl
+root      1158  0.0  3.0 349364 15192 ?        Ssl  Jul06   0:06 /usr/lib/snapd/
+root      1176  0.0  0.0  13372   164 ?        Ss   Jul06   0:00 /sbin/mdadm --m
+root      1188  0.0  1.0 277176  5168 ?        Ssl  Jul06   0:00 /usr/lib/policy
+root      1267  0.0  0.3  12840  1604 ttyS0    Ss+  Jul06   0:00 /sbin/agetty --
+root      1272  0.0  0.3  14656  1636 tty1     Ss+  Jul06   0:00 /sbin/agetty --
+root      1329  0.0  0.7  65508  3892 ?        Ss   Jul06   0:00 /usr/sbin/sshd
+root     12433  0.0  0.0      0     0 ?        S    Jul07   0:01 [kworker/u30:2]
+root     23478  0.0  0.0      0     0 ?        S<   Jul08   0:00 [xfsalloc]
+root     23479  0.0  0.0      0     0 ?        S<   Jul08   0:00 [xfs_mru_cache]
+root     25115  0.0  0.0      0     0 ?        S    Jul08   0:00 [kworker/0:7]
+root     26038  0.0  0.0      0     0 ?        S    05:44   0:00 [kworker/u30:1]
+root     26526  0.0  0.0      0     0 ?        S    11:06   0:00 [kworker/0:1]
+root     27011  0.0  1.3  92796  6924 ?        Ss   17:40   0:00 sshd: ubuntu [p
+ubuntu   27013  0.0  0.9  45144  4644 ?        Ss   17:40   0:00 /lib/systemd/sy
+ubuntu   27014  0.0  0.3  61284  1988 ?        S    17:40   0:00 (sd-pam)
+root     27016  0.0  0.0      0     0 ?        S    17:40   0:00 [kworker/0:0]
+ubuntu   27072  0.0  0.8  92796  4264 ?        S    17:40   0:00 sshd: ubuntu@pt
+ubuntu   27073  0.0  1.0  21388  5184 pts/0    Ss   17:40   0:00 -bash
+ubuntu   27106  0.0  0.6  36084  3268 pts/0    R+   17:41   0:00 ps aux
+
+6)
+ubuntu@ip-10-0-6-98:~$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 0a:d9:d4:e0:6a:3e
+          inet addr:10.0.6.98  Bcast:10.0.6.255  Mask:255.255.255.0
+          inet6 addr: fe80::8d9:d4ff:fee0:6a3e/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:86661 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:44147 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:88655251 (88.6 MB)  TX bytes:5486663 (5.4 MB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:192 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:192 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:14456 (14.4 KB)  TX bytes:14456 (14.4 KB)
+
+7) 
+ubuntu@ip-10-0-6-98:~$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         ip-10-0-6-1.us- 0.0.0.0         UG    0      0        0 eth0
+10.0.6.0        *               255.255.255.0   U     0      0        0 eth0
+
+8) ubuntu@ip-10-0-6-98:~$ netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 *:ssh                   *:*                     LISTEN
+tcp        0    448 ip-10-0-6-98.us-wes:ssh c-73-180-24-167.h:64454 ESTABLISHED
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+udp        0      0 *:bootpc                *:*
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ]         DGRAM                    97577    /run/user/1000/systemd/notify
+unix  2      [ ACC ]     STREAM     LISTENING     97578    /run/user/1000/systemd/private
+unix  2      [ ACC ]     SEQPACKET  LISTENING     9344     /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     13255    /run/acpid.socket
+unix  2      [ ACC ]     STREAM     LISTENING     13256    /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     13257    /run/snapd.socket
+unix  2      [ ACC ]     STREAM     LISTENING     13258    /run/snapd-snap.socket
+unix  2      [ ACC ]     STREAM     LISTENING     13262    /run/uuidd/request
+unix  2      [ ACC ]     STREAM     LISTENING     13259    /var/lib/lxd/unix.socket
+unix  2      [ ACC ]     STREAM     LISTENING     13418    @ISCSIADM_ABSTRACT_NAMESPACE
+unix  3      [ ]         DGRAM                    8787     /run/systemd/notify
+unix  2      [ ACC ]     STREAM     LISTENING     8788     /run/systemd/private
+unix  2      [ ]         DGRAM                    8793     /run/systemd/journal/syslog
+unix  2      [ ACC ]     STREAM     LISTENING     8803     /run/lvm/lvmetad.socket
+unix  2      [ ACC ]     STREAM     LISTENING     8804     /run/lvm/lvmpolld.socket
+unix  2      [ ACC ]     STREAM     LISTENING     8805     /run/systemd/journal/stdout
+unix  7      [ ]         DGRAM                    8806     /run/systemd/journal/socket
+unix  9      [ ]         DGRAM                    9032     /run/systemd/journal/dev-log
+unix  3      [ ]         STREAM     CONNECTED     14197
+unix  3      [ ]         STREAM     CONNECTED     14198    /var/run/dbus/system_bus_socket
+unix  3      [ ]         DGRAM                    10167
+unix  3      [ ]         DGRAM                    10168
+unix  2      [ ]         DGRAM                    13426
+unix  3      [ ]         STREAM     CONNECTED     13539
+unix  3      [ ]         STREAM     CONNECTED     14733    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     15590    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     14732
+unix  3      [ ]         STREAM     CONNECTED     13548
+unix  2      [ ]         DGRAM                    10158
+unix  3      [ ]         STREAM     CONNECTED     13574    /var/run/dbus/system_bus_socket
+unix  2      [ ]         DGRAM                    12704
+unix  2      [ ]         DGRAM                    13541
+unix  3      [ ]         STREAM     CONNECTED     15626    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     14126
+unix  3      [ ]         STREAM     CONNECTED     15606    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     13842
+unix  2      [ ]         DGRAM                    14070
+unix  2      [ ]         DGRAM                    9079
+unix  2      [ ]         DGRAM                    97569
+unix  3      [ ]         STREAM     CONNECTED     15640    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    10995
+unix  3      [ ]         STREAM     CONNECTED     10899
+unix  2      [ ]         DGRAM                    97544
+unix  3      [ ]         STREAM     CONNECTED     14483
+unix  3      [ ]         STREAM     CONNECTED     97629
+unix  3      [ ]         DGRAM                    10992
+unix  3      [ ]         STREAM     CONNECTED     10151    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    97465
+unix  3      [ ]         DGRAM                    10994
+unix  3      [ ]         STREAM     CONNECTED     10902    /run/systemd/journal/stdout
+unix  3      [ ]         DGRAM                    10993
+unix  3      [ ]         STREAM     CONNECTED     97552    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     9616
+unix  3      [ ]         STREAM     CONNECTED     97630
+unix  3      [ ]         STREAM     CONNECTED     9617     /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     10150
+unix  3      [ ]         STREAM     CONNECTED     15624    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    55468
+unix  2      [ ]         DGRAM                    13569
+unix  2      [ ]         DGRAM                    13417
+unix  3      [ ]         STREAM     CONNECTED     13572
+unix  3      [ ]         STREAM     CONNECTED     97538
+unix  3      [ ]         STREAM     CONNECTED     14037
+unix  3      [ ]         STREAM     CONNECTED     14508
+unix  3      [ ]         STREAM     CONNECTED     15625    /run/systemd/journal/stdout
+unix  2      [ ]         DGRAM                    10988
+unix  3      [ ]         STREAM     CONNECTED     14509    /var/run/dbus/system_bus_socket
+unix  3      [ ]         STREAM     CONNECTED     15834    /run/systemd/journal/stdout
+unix  3      [ ]         STREAM     CONNECTED     13573
+unix  3      [ ]         STREAM     CONNECTED     13981
+unix  3      [ ]         STREAM     CONNECTED     15833
+
+9)
+ubuntu@ip-10-0-6-98:~$ dpkg-query -l
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name           Version      Architecture Description
++++-==============-============-============-=================================
+ii  accountsservic 0.6.40-2ubun amd64        query and manipulate user account
+ii  acl            2.2.52-3     amd64        Access control list utilities
+ii  acpid          1:2.0.26-1ub amd64        Advanced Configuration and Power
+ii  adduser        3.113+nmu3ub all          add and remove users and groups
+ii  apparmor       2.10.95-0ubu amd64        user-space parser utility for App
+ii  apport         2.20.1-0ubun all          automatically generate crash repo
+ii  apport-symptom 0.20         all          symptom scripts for apport
+ii  apt            1.2.26       amd64        commandline package manager
+ii  apt-transport- 1.2.26       amd64        https download transport for APT
+ii  apt-utils      1.2.26       amd64        package management related utilit
+ii  at             3.1.18-2ubun amd64        Delayed job execution and batch p
+ii  base-files     9.4ubuntu4.6 amd64        Debian base system miscellaneous
+ii  base-passwd    3.5.39       amd64        Debian base system master passwor
+ii  bash           4.3-14ubuntu amd64        GNU Bourne Again SHell
+ii  bash-completio 1:2.1-4.2ubu all          programmable completion for the b
+ii  bcache-tools   1.0.8-2      amd64        bcache userspace tools
+ii  bind9-host     1:9.10.3.dfs amd64        Version of 'host' bundled with BI
+ii  bsdmainutils   9.0.6ubuntu3 amd64        collection of more utilities from
+ii  bsdutils       1:2.27.1-6ub amd64        basic utilities from 4.4BSD-Lite
+ii  btrfs-tools    4.4-1ubuntu1 amd64        Checksumming Copy on Write Filesy
+ii  busybox-initra 1:1.22.0-15u amd64        Standalone shell setup for initra
+ii  busybox-static 1:1.22.0-15u amd64        Standalone rescue shell with tons
+ii  byobu          5.106-0ubunt all          text window manager, shell multip
+ii  bzip2          1.0.6-8      amd64        high-quality block-sorting file c
+ii  ca-certificate 20170717~16. all          Common CA certificates
+ii  cloud-guest-ut 0.27-0ubuntu all          cloud guest utilities
+ii  cloud-init     18.2-4-g0592 all          Init scripts for cloud instances
+ii  cloud-initramf 0.27ubuntu1. all          copy initramfs modules into root
+ii  cloud-initramf 0.27ubuntu1. all          write a network interface file in
+ii  command-not-fo 0.3ubuntu16. all          Suggest installation of packages
+ii  command-not-fo 0.3ubuntu16. amd64        Set of data files for command-not
+ii  console-setup  1.108ubuntu1 all          console font and keymap setup pro
+ii  console-setup- 1.108ubuntu1 all          Linux specific part of console-se
+ii  coreutils      8.25-2ubuntu amd64        GNU core utilities
+ii  cpio           2.11+dfsg-5u amd64        GNU cpio -- a program to manage a
+ii  cron           3.0pl1-128ub amd64        process scheduling daemon
+ii  cryptsetup     2:1.6.6-5ubu amd64        disk encryption support - startup
+ii  cryptsetup-bin 2:1.6.6-5ubu amd64        disk encryption support - command
+ii  curl           7.47.0-1ubun amd64        command line tool for transferrin
+ii  dash           0.5.8-2.1ubu amd64        POSIX-compliant shell
+ii  dbus           1.10.6-1ubun amd64        simple interprocess messaging sys
+ii  debconf        1.5.58ubuntu all          Debian configuration management s
+ii  debconf-i18n   1.5.58ubuntu all          full internationalization support
+ii  debianutils    4.7          amd64        Miscellaneous utilities specific
+ii  dh-python      2.20151103ub all          Debian helper tools for packaging
+ii  diffutils      1:3.3-3      amd64        File comparison utilities
+ii  distro-info-da 0.28ubuntu0. all          information about the distributio
+ii  dmeventd       2:1.02.110-1 amd64        Linux Kernel Device Mapper event
+ii  dmidecode      3.0-2ubuntu0 amd64        SMBIOS/DMI table decoder
+ii  dmsetup        2:1.02.110-1 amd64        Linux Kernel Device Mapper usersp
+ii  dns-root-data  2015052300+h all          DNS root data including root zone
+ii  dnsmasq-base   2.75-1ubuntu amd64        Small caching DNS proxy and DHCP/
+ii  dnsutils       1:9.10.3.dfs amd64        Clients provided with BIND
+ii  dosfstools     3.0.28-2ubun amd64        utilities for making and checking
+ii  dpkg           1.18.4ubuntu amd64        Debian package management system
+ii  e2fslibs:amd64 1.42.13-1ubu amd64        ext2/ext3/ext4 file system librar
+ii  e2fsprogs      1.42.13-1ubu amd64        ext2/ext3/ext4 file system utilit
+ii  eatmydata      105-3        all          Library and utilities designed to
+ii  ed             1.10-2       amd64        classic UNIX line editor
+ii  eject          2.1.5+deb1+c amd64        ejects CDs and operates CD-Change
+ii  ethtool        1:4.5-1      amd64        display or change Ethernet device
+ii  file           1:5.25-2ubun amd64        Determines file type using "magic
+ii  findutils      4.6.0+git+20 amd64        utilities for finding files--find
+ii  fonts-ubuntu-f 1:0.83-0ubun all          Ubuntu Font Family Linux console
+ii  friendly-recov 0.2.31ubuntu all          Make recovery more user-friendly
+ii  ftp            0.17-33      amd64        classical file transfer client
+ii  fuse           2.9.4-1ubunt amd64        Filesystem in Userspace
+ii  gawk           1:4.1.3+dfsg amd64        GNU awk, a pattern scanning and p
+ii  gcc-5-base:amd 5.4.0-6ubunt amd64        GCC, the GNU Compiler Collection
+ii  gcc-6-base:amd 6.0.1-0ubunt amd64        GCC, the GNU Compiler Collection
+ii  gdisk          1.0.1-1build amd64        GPT fdisk text-mode partitioning
+ii  geoip-database 20160408-1   all          IP lookup command line tools that
+ii  gettext-base   0.19.7-2ubun amd64        GNU Internationalization utilitie
+ii  gir1.2-glib-2. 1.46.0-3ubun amd64        Introspection data for GLib, GObj
+ii  git            1:2.7.4-0ubu amd64        fast, scalable, distributed revis
+ii  git-man        1:2.7.4-0ubu all          fast, scalable, distributed revis
+ii  gnupg          1.4.20-1ubun amd64        GNU privacy guard - a free PGP re
+ii  gpgv           1.4.20-1ubun amd64        GNU privacy guard - signature ver
+ii  grep           2.25-1~16.04 amd64        GNU grep, egrep and fgrep
+ii  groff-base     1.22.3-7     amd64        GNU troff text-formatting system
+ii  grub-common    2.02~beta2-3 amd64        GRand Unified Bootloader (common
+ii  grub-gfxpayloa 0.7          amd64        GRUB gfxpayload blacklist
+ii  grub-legacy-ec 18.2-4-g0592 all          Handles update-grub for ec2 insta
+ii  grub-pc        2.02~beta2-3 amd64        GRand Unified Bootloader, version
+ii  grub-pc-bin    2.02~beta2-3 amd64        GRand Unified Bootloader, version
+ii  grub2-common   2.02~beta2-3 amd64        GRand Unified Bootloader (common
+ii  guile-2.0-libs 2.0.11+1-10  amd64        Core Guile libraries
+ii  gzip           1.6-4ubuntu1 amd64        GNU compression utilities
+ii  hdparm         9.48+ds-1ubu amd64        tune hard disk parameters for hig
+ii  hibagent       1.0.1-0ubunt all          Agent that triggers hibernation o
+ii  hostname       3.16ubuntu2  amd64        utility to set/show the host name
+ii  ifenslave      2.7ubuntu1   all          configure network interfaces for
+ii  ifupdown       0.8.10ubuntu amd64        high level tools to configure net
+ii  info           6.1.0.dfsg.1 amd64        Standalone GNU Info documentation
+ii  init           1.29ubuntu4  amd64        System-V-like init utilities - me
+ii  init-system-he 1.29ubuntu4  all          helper tools for all init systems
+ii  initramfs-tool 0.122ubuntu8 all          generic modular initramfs generat
+ii  initramfs-tool 0.122ubuntu8 amd64        binaries used by initramfs-tools
+ii  initramfs-tool 0.122ubuntu8 all          generic modular initramfs generat
+ii  initscripts    2.88dsf-59.3 amd64        scripts for initializing and shut
+ii  insserv        1.14.0-5ubun amd64        boot sequence organizer using LSB
+ii  install-info   6.1.0.dfsg.1 amd64        Manage installed documentation in
+ii  iproute2       4.3.0-1ubunt amd64        networking and traffic control to
+ii  iptables       1.6.0-2ubunt amd64        administration tools for packet f
+ii  iputils-ping   3:20121221-5 amd64        Tools to test the reachability of
+ii  iputils-tracep 3:20121221-5 amd64        Tools to trace the network path t
+ii  irqbalance     1.1.0-2ubunt amd64        Daemon to balance interrupts for
+ii  isc-dhcp-clien 4.3.3-5ubunt amd64        DHCP client for automatically obt
+ii  isc-dhcp-commo 4.3.3-5ubunt amd64        common files used by all of the i
+ii  iso-codes      3.65-1       all          ISO language, territory, currency
+ii  kbd            1.15.5-1ubun amd64        Linux console font and keytable u
+ii  keyboard-confi 1.108ubuntu1 all          system-wide keyboard preferences
+ii  klibc-utils    2.0.4-8ubunt amd64        small utilities built with klibc
+ii  kmod           22-1ubuntu5  amd64        tools for managing Linux kernel m
+ii  krb5-locales   1.13.2+dfsg- all          Internationalization support for
+ii  language-selec 0.165.4      all          Language selector for Ubuntu
+ii  less           481-2.1ubunt amd64        pager program similar to more
+ii  libaccountsser 0.6.40-2ubun amd64        query and manipulate user account
+ii  libacl1:amd64  2.2.52-3     amd64        Access control list shared librar
+ii  libapparmor-pe 2.10.95-0ubu amd64        AppArmor library Perl bindings
+ii  libapparmor1:a 2.10.95-0ubu amd64        changehat AppArmor library
+ii  libapt-inst2.0 1.2.26       amd64        deb package format runtime librar
+ii  libapt-pkg5.0: 1.2.26       amd64        package management runtime librar
+ii  libasn1-8-heim 1.7~git20150 amd64        Heimdal Kerberos - ASN.1 library
+ii  libasprintf0v5 0.19.7-2ubun amd64        GNU library to use fprintf and fr
+ii  libatm1:amd64  1:2.5.1-1.5  amd64        shared library for ATM (Asynchron
+ii  libattr1:amd64 1:2.4.47-2   amd64        Extended attribute shared library
+ii  libaudit-commo 1:2.4.5-1ubu all          Dynamic library for security audi
+ii  libaudit1:amd6 1:2.4.5-1ubu amd64        Dynamic library for security audi
+ii  libbind9-140:a 1:9.10.3.dfs amd64        BIND9 Shared Library used by BIND
+ii  libblkid1:amd6 2.27.1-6ubun amd64        block device ID library
+ii  libbsd0:amd64  0.8.2-1      amd64        utility functions from BSD system
+ii  libbz2-1.0:amd 1.0.6-8      amd64        high-quality block-sorting file c
+ii  libc-bin       2.23-0ubuntu amd64        GNU C Library: Binaries
+ii  libc6:amd64    2.23-0ubuntu amd64        GNU C Library: Shared libraries
+ii  libcap-ng0:amd 0.7.7-1      amd64        An alternate POSIX capabilities l
+ii  libcap2:amd64  1:2.24-12    amd64        POSIX 1003.1e capabilities (libra
+ii  libcap2-bin    1:2.24-12    amd64        POSIX 1003.1e capabilities (utili
+ii  libcomerr2:amd 1.42.13-1ubu amd64        common error description library
+ii  libcryptsetup4 2:1.6.6-5ubu amd64        disk encryption support - shared
+ii  libcurl3-gnutl 7.47.0-1ubun amd64        easy-to-use client-side URL trans
+ii  libdb5.3:amd64 5.3.28-11ubu amd64        Berkeley v5.3 Database Libraries
+ii  libdbus-1-3:am 1.10.6-1ubun amd64        simple interprocess messaging sys
+ii  libdbus-glib-1 0.106-1      amd64        simple interprocess messaging sys
+ii  libdebconfclie 0.198ubuntu1 amd64        Debian Configuration Management S
+ii  libdevmapper-e 2:1.02.110-1 amd64        Linux Kernel Device Mapper event
+ii  libdevmapper1. 2:1.02.110-1 amd64        Linux Kernel Device Mapper usersp
+ii  libdns-export1 1:9.10.3.dfs amd64        Exported DNS Shared Library
+ii  libdns162:amd6 1:9.10.3.dfs amd64        DNS Shared Library used by BIND
+ii  libdrm-common  2.4.83-1~16. all          Userspace interface to kernel DRM
+ii  libdrm2:amd64  2.4.83-1~16. amd64        Userspace interface to kernel DRM
+ii  libdumbnet1:am 1.12-7       amd64        dumb, portable networking library
+ii  libeatmydata1: 105-3        amd64        Library and utilities to disable
+ii  libedit2:amd64 3.1-20150325 amd64        BSD editline and history librarie
+ii  libelf1:amd64  0.165-3ubunt amd64        library to read and write ELF fil
+ii  liberror-perl  0.17-1.2     all          Perl module for error/exception h
+ii  libestr0       0.1.10-1     amd64        Helper functions for handling str
+ii  libevent-2.0-5 2.0.21-stabl amd64        Asynchronous event notification l
+ii  libexpat1:amd6 2.1.0-7ubunt amd64        XML parsing C library - runtime l
+ii  libfdisk1:amd6 2.27.1-6ubun amd64        fdisk partitioning library
+ii  libffi6:amd64  3.2.1-4      amd64        Foreign Function Interface librar
+ii  libfreetype6:a 2.6.1-0.1ubu amd64        FreeType 2 font engine, shared li
+ii  libfribidi0:am 0.19.7-1     amd64        Free Implementation of the Unicod
+ii  libfuse2:amd64 2.9.4-1ubunt amd64        Filesystem in Userspace (library)
+ii  libgc1c2:amd64 1:7.4.2-7.3u amd64        conservative garbage collector fo
+ii  libgcc1:amd64  1:6.0.1-0ubu amd64        GCC support library
+ii  libgcrypt20:am 1.6.5-2ubunt amd64        LGPL Crypto library - runtime lib
+ii  libgdbm3:amd64 1.8.3-13.1   amd64        GNU dbm database routines (runtim
+ii  libgeoip1:amd6 1.6.9-1      amd64        non-DNS IP-to-country resolver li
+ii  libgirepositor 1.46.0-3ubun amd64        Library for handling GObject intr
+ii  libglib2.0-0:a 2.48.2-0ubun amd64        GLib library of C routines
+ii  libglib2.0-dat 2.48.2-0ubun all          Common files for GLib library
+ii  libgmp10:amd64 2:6.1.0+dfsg amd64        Multiprecision arithmetic library
+ii  libgnutls-open 3.4.10-4ubun amd64        GNU TLS library - OpenSSL wrapper
+ii  libgnutls30:am 3.4.10-4ubun amd64        GNU TLS library - main runtime li
+ii  libgpg-error0: 1.21-2ubuntu amd64        library for common error values a
+ii  libgpm2:amd64  1.20.4-6.1   amd64        General Purpose Mouse - shared li
+ii  libgsasl7      1.8.0-8ubunt amd64        GNU SASL library
+ii  libgssapi-krb5 1.13.2+dfsg- amd64        MIT Kerberos runtime libraries -
+ii  libgssapi3-hei 1.7~git20150 amd64        Heimdal Kerberos - GSSAPI support
+ii  libhcrypto4-he 1.7~git20150 amd64        Heimdal Kerberos - crypto library
+ii  libheimbase1-h 1.7~git20150 amd64        Heimdal Kerberos - Base library
+ii  libheimntlm0-h 1.7~git20150 amd64        Heimdal Kerberos - NTLM support l
+ii  libhogweed4:am 3.2-1ubuntu0 amd64        low level cryptographic library (
+ii  libhx509-5-hei 1.7~git20150 amd64        Heimdal Kerberos - X509 support l
+ii  libicu55:amd64 55.1-7ubuntu amd64        International Components for Unic
+ii  libidn11:amd64 1.32-3ubuntu amd64        GNU Libidn library, implementatio
+ii  libisc-export1 1:9.10.3.dfs amd64        Exported ISC Shared Library
+ii  libisc160:amd6 1:9.10.3.dfs amd64        ISC Shared Library used by BIND
+ii  libisccc140:am 1:9.10.3.dfs amd64        Command Channel Library used by B
+ii  libisccfg140:a 1:9.10.3.dfs amd64        Config File Handling Library used
+ii  libjson-c2:amd 0.11-4ubuntu amd64        JSON manipulation library - share
+ii  libk5crypto3:a 1.13.2+dfsg- amd64        MIT Kerberos runtime libraries -
+ii  libkeyutils1:a 1.5.9-8ubunt amd64        Linux Key Management Utilities (l
+ii  libklibc       2.0.4-8ubunt amd64        minimal libc subset for use with
+ii  libkmod2:amd64 22-1ubuntu5  amd64        libkmod shared library
+ii  libkrb5-26-hei 1.7~git20150 amd64        Heimdal Kerberos - libraries
+ii  libkrb5-3:amd6 1.13.2+dfsg- amd64        MIT Kerberos runtime libraries
+ii  libkrb5support 1.13.2+dfsg- amd64        MIT Kerberos runtime libraries -
+ii  libkyotocabine 1.2.76-4.1   amd64        Straightforward implementation of
+ii  libldap-2.4-2: 2.4.42+dfsg- amd64        OpenLDAP libraries
+ii  liblocale-gett 1.07-1build1 amd64        module using libc functions for i
+ii  libltdl7:amd64 2.4.6-0.1    amd64        System independent dlopen wrapper
+ii  liblvm2app2.2: 2.02.133-1ub amd64        LVM2 application library
+ii  liblvm2cmd2.02 2.02.133-1ub amd64        LVM2 command library
+ii  liblwres141:am 1:9.10.3.dfs amd64        Lightweight Resolver Library used
+ii  liblxc1        2.0.8-0ubunt amd64        Linux Containers userspace tools
+ii  liblz4-1:amd64 0.0~r131-2ub amd64        Fast LZ compression algorithm lib
+ii  liblzma5:amd64 5.1.1alpha+2 amd64        XZ-format compression library
+ii  liblzo2-2:amd6 2.08-1.2     amd64        data compression library
+ii  libmagic1:amd6 1:5.25-2ubun amd64        File type determination library u
+ii  libmailutils4: 1:2.99.99-1u amd64        GNU Mail abstraction library
+ii  libmnl0:amd64  1.0.3-5      amd64        minimalistic Netlink communicatio
+ii  libmount1:amd6 2.27.1-6ubun amd64        device mounting library
+ii  libmpdec2:amd6 2.4.2-1      amd64        library for decimal floating poin
+ii  libmpfr4:amd64 3.1.4-1      amd64        multiple precision floating-point
+ii  libmspack0:amd 0.5-1ubuntu0 amd64        library for Microsoft compression
+ii  libmysqlclient 5.7.22-0ubun amd64        MySQL database client library
+ii  libncurses5:am 6.0+20160213 amd64        shared libraries for terminal han
+ii  libncursesw5:a 6.0+20160213 amd64        shared libraries for terminal han
+ii  libnetfilter-c 1.0.5-1      amd64        Netfilter netlink-conntrack libra
+ii  libnettle6:amd 3.2-1ubuntu0 amd64        low level cryptographic library (
+ii  libnewt0.52:am 0.52.18-1ubu amd64        Not Erik's Windowing Toolkit - te
+ii  libnfnetlink0: 1.0.1-3      amd64        Netfilter netlink library
+ii  libnih1:amd64  1.0.3-4.3ubu amd64        NIH Utility Library
+ii  libntlm0:amd64 1.4-7        amd64        NTLM authentication library
+ii  libnuma1:amd64 2.0.11-1ubun amd64        Libraries for controlling NUMA po
+ii  libp11-kit0:am 0.23.2-5~ubu amd64        library for loading and coordinat
+ii  libpam-modules 1.1.8-3.2ubu amd64        Pluggable Authentication Modules
+ii  libpam-modules 1.1.8-3.2ubu amd64        Pluggable Authentication Modules
+ii  libpam-runtime 1.1.8-3.2ubu all          Runtime support for the PAM libra
+ii  libpam-systemd 229-4ubuntu2 amd64        system and service manager - PAM
+ii  libpam0g:amd64 1.1.8-3.2ubu amd64        Pluggable Authentication Modules
+ii  libparted2:amd 3.2-15ubuntu amd64        disk partition manipulator - shar
+ii  libpcap0.8:amd 1.7.4-2      amd64        system interface for user-level p
+ii  libpci3:amd64  1:3.3.1-1.1u amd64        Linux PCI Utilities (shared libra
+ii  libpcre3:amd64 2:8.38-3.1   amd64        Perl 5 Compatible Regular Express
+ii  libperl5.22:am 5.22.1-9ubun amd64        shared Perl library
+ii  libpipeline1:a 1.4.1-2      amd64        pipeline manipulation library
+ii  libplymouth4:a 0.9.2-3ubunt amd64        graphical boot animation and logg
+ii  libpng12-0:amd 1.2.54-1ubun amd64        PNG library - runtime
+ii  libpolkit-agen 0.105-14.1   amd64        PolicyKit Authentication Agent AP
+ii  libpolkit-back 0.105-14.1   amd64        PolicyKit backend API
+ii  libpolkit-gobj 0.105-14.1   amd64        PolicyKit Authorization API
+ii  libpopt0:amd64 1.16-10      amd64        lib for parsing cmdline parameter
+ii  libprocps4:amd 2:3.3.10-4ub amd64        library for accessing process inf
+ii  libpython2.7:a 2.7.12-1ubun amd64        Shared Python runtime library (ve
+ii  libpython2.7-m 2.7.12-1ubun amd64        Minimal subset of the Python lang
+ii  libpython2.7-s 2.7.12-1ubun amd64        Interactive high-level object-ori
+ii  libpython3-std 3.5.1-3      amd64        interactive high-level object-ori
+ii  libpython3.5:a 3.5.2-2ubunt amd64        Shared Python runtime library (ve
+ii  libpython3.5-m 3.5.2-2ubunt amd64        Minimal subset of the Python lang
+ii  libpython3.5-s 3.5.2-2ubunt amd64        Interactive high-level object-ori
+ii  libreadline5:a 5.2+dfsg-3bu amd64        GNU readline and history librarie
+ii  libreadline6:a 6.3-8ubuntu2 amd64        GNU readline and history librarie
+ii  libroken18-hei 1.7~git20150 amd64        Heimdal Kerberos - roken support
+ii  librtmp1:amd64 2.4+20151223 amd64        toolkit for RTMP streams (shared
+ii  libsasl2-2:amd 2.1.26.dfsg1 amd64        Cyrus SASL - authentication abstr
+ii  libsasl2-modul 2.1.26.dfsg1 amd64        Cyrus SASL - pluggable authentica
+ii  libsasl2-modul 2.1.26.dfsg1 amd64        Cyrus SASL - pluggable authentica
+ii  libseccomp2:am 2.3.1-2.1ubu amd64        high level interface to Linux sec
+ii  libselinux1:am 2.4-3build2  amd64        SELinux runtime shared libraries
+ii  libsemanage-co 2.3-1build3  all          Common files for SELinux policy m
+ii  libsemanage1:a 2.3-1build3  amd64        SELinux policy management library
+ii  libsepol1:amd6 2.4-2        amd64        SELinux library for manipulating
+ii  libsigsegv2:am 2.10-4       amd64        Library for handling page faults
+ii  libslang2:amd6 2.3.0-2ubunt amd64        S-Lang programming library - runt
+ii  libsmartcols1: 2.27.1-6ubun amd64        smart column output alignment lib
+ii  libsqlite3-0:a 3.11.0-1ubun amd64        SQLite 3 shared library
+ii  libss2:amd64   1.42.13-1ubu amd64        command-line interface parsing li
+ii  libssl1.0.0:am 1.0.2g-1ubun amd64        Secure Sockets Layer toolkit - sh
+ii  libstdc++6:amd 5.4.0-6ubunt amd64        GNU Standard C++ Library v3
+ii  libsystemd0:am 229-4ubuntu2 amd64        systemd utility library
+ii  libtasn1-6:amd 4.7-3ubuntu0 amd64        Manage ASN.1 structures (runtime)
+ii  libtext-charwi 0.04-7build5 amd64        get display widths of characters
+ii  libtext-iconv- 1.7-5build4  amd64        converts between character sets i
+ii  libtext-wrapi1 0.06-7.1     all          internationalized substitute of T
+ii  libtinfo5:amd6 6.0+20160213 amd64        shared low-level terminfo library
+ii  libudev1:amd64 229-4ubuntu2 amd64        libudev shared library
+ii  libunistring0: 0.9.3-5.2ubu amd64        Unicode string library for C
+ii  libusb-0.1-4:a 2:0.1.12-28  amd64        userspace USB programming library
+ii  libusb-1.0-0:a 2:1.0.20-1   amd64        userspace USB programming library
+ii  libustr-1.0-1: 1.0.4-5      amd64        Micro string library: shared libr
+ii  libutempter0:a 1.1.6-3      amd64        privileged helper for utmp/wtmp u
+ii  libuuid1:amd64 2.27.1-6ubun amd64        Universally Unique ID library
+ii  libwind0-heimd 1.7~git20150 amd64        Heimdal Kerberos - stringprep imp
+ii  libwrap0:amd64 7.6.q-25     amd64        Wietse Venema's TCP wrappers libr
+ii  libx11-6:amd64 2:1.6.3-1ubu amd64        X11 client-side library
+ii  libx11-data    2:1.6.3-1ubu all          X11 client-side library
+ii  libxau6:amd64  1:1.0.8-1    amd64        X11 authorisation library
+ii  libxcb1:amd64  1.11.1-1ubun amd64        X C Binding
+ii  libxdmcp6:amd6 1:1.1.2-1.1  amd64        X11 Display Manager Control Proto
+ii  libxext6:amd64 2:1.3.3-1    amd64        X11 miscellaneous extension libra
+ii  libxml2:amd64  2.9.3+dfsg1- amd64        GNOME XML library
+ii  libxmlsec1     1.2.20-2ubun amd64        XML security library
+ii  libxmlsec1-ope 1.2.20-2ubun amd64        Openssl engine for the XML securi
+ii  libxmuu1:amd64 2:1.1.2-2    amd64        X11 miscellaneous micro-utility l
+ii  libxslt1.1:amd 1.1.28-2.1ub amd64        XSLT 1.0 processing library - run
+ii  libxtables11:a 1.6.0-2ubunt amd64        netfilter xtables library
+ii  libyaml-0-2:am 0.1.6-3      amd64        Fast YAML 1.1 parser and emitter
+ii  linux-aws      4.4.0.1062.6 amd64        Complete Linux kernel for Amazon
+ii  linux-aws-head 4.4.0-1060.6 all          Header files related to Linux ker
+ii  linux-aws-head 4.4.0-1062.7 all          Header files related to Linux ker
+ii  linux-base     4.5ubuntu1~1 all          Linux image base package
+ii  linux-headers- 4.4.0-1060.6 amd64        Linux kernel headers for version
+ii  linux-headers- 4.4.0-1062.7 amd64        Linux kernel headers for version
+ii  linux-headers- 4.4.0.1062.6 amd64        Linux kernel headers for Amazon W
+ii  linux-image-4. 4.4.0-1060.6 amd64        Linux kernel image for version 4.
+ii  linux-image-4. 4.4.0-1062.7 amd64        Linux kernel image for version 4.
+ii  linux-image-aw 4.4.0.1062.6 amd64        Linux kernel image for Amazon Web
+ii  locales        2.23-0ubuntu all          GNU C Library: National Language
+ii  login          1:4.2-3.1ubu amd64        system login tools
+ii  logrotate      3.8.7-2ubunt amd64        Log rotation utility
+ii  lsb-base       9.20160110ub all          Linux Standard Base init script f
+ii  lsb-release    9.20160110ub all          Linux Standard Base version repor
+ii  lshw           02.17-1.1ubu amd64        information about hardware config
+ii  lsof           4.89+dfsg-0. amd64        Utility to list open files
+ii  ltrace         0.7.3-5.1ubu amd64        Tracks runtime library calls in d
+ii  lvm2           2.02.133-1ub amd64        Linux Logical Volume Manager
+ii  lxc-common     2.0.8-0ubunt amd64        Linux Containers userspace tools
+ii  lxcfs          2.0.8-0ubunt amd64        FUSE based filesystem for LXC
+ii  lxd            2.0.11-0ubun amd64        Container hypervisor based on LXC
+ii  lxd-client     2.0.11-0ubun amd64        Container hypervisor based on LXC
+ii  mailutils      1:2.99.99-1u amd64        GNU mailutils utilities for handl
+ii  mailutils-comm 1:2.99.99-1u all          Common files for GNU mailutils
+ii  makedev        2.3.1-93ubun all          creates device files in /dev
+ii  man-db         2.7.5-1      amd64        on-line manual pager
+ii  manpages       4.04-2       all          Manual pages about using a GNU/Li
+ii  mawk           1.3.3-17ubun amd64        a pattern scanning and text proce
+ii  mdadm          3.3-2ubuntu7 amd64        tool to administer Linux MD array
+ii  mime-support   3.59ubuntu1  all          MIME files 'mime.types' & 'mailca
+ii  mlocate        0.26-1ubuntu amd64        quickly find files on the filesys
+ii  mount          2.27.1-6ubun amd64        tools for mounting and manipulati
+ii  mtr-tiny       0.86-1ubuntu amd64        Full screen ncurses traceroute to
+ii  multiarch-supp 2.23-0ubuntu amd64        Transitional package to ensure mu
+ii  mysql-common   5.7.22-0ubun all          MySQL database common files, e.g.
+ii  nano           2.5.3-2ubunt amd64        small, friendly text editor inspi
+ii  ncurses-base   6.0+20160213 all          basic terminal type definitions
+ii  ncurses-bin    6.0+20160213 amd64        terminal-related programs and man
+ii  ncurses-term   6.0+20160213 all          additional terminal type definiti
+ii  net-tools      1.60-26ubunt amd64        NET-3 networking toolkit
+ii  netbase        5.3          all          Basic TCP/IP networking system
+ii  netcat-openbsd 1.105-7ubunt amd64        TCP/IP swiss army knife
+ii  ntfs-3g        1:2015.3.14A amd64        read/write NTFS driver for FUSE
+ii  open-iscsi     2.0.873+git0 amd64        iSCSI initiator tools
+ii  open-vm-tools  2:10.2.0-3~u amd64        Open VMware Tools for virtual mac
+ii  openssh-client 1:7.2p2-4ubu amd64        secure shell (SSH) client, for se
+ii  openssh-server 1:7.2p2-4ubu amd64        secure shell (SSH) server, for se
+ii  openssh-sftp-s 1:7.2p2-4ubu amd64        secure shell (SSH) sftp server mo
+ii  openssl        1.0.2g-1ubun amd64        Secure Sockets Layer toolkit - cr
+ii  os-prober      1.70ubuntu3. amd64        utility to detect other OSes on a
+ii  overlayroot    0.27ubuntu1. all          use an overlayfs on top of a read
+ii  parted         3.2-15ubuntu amd64        disk partition manipulator
+ii  passwd         1:4.2-3.1ubu amd64        change and administer password an
+ii  pastebinit     1.5-1        all          command-line pastebin client
+ii  patch          2.7.5-1ubunt amd64        Apply a diff file to an original
+ii  pciutils       1:3.3.1-1.1u amd64        Linux PCI Utilities
+ii  perl           5.22.1-9ubun amd64        Larry Wall's Practical Extraction
+ii  perl-base      5.22.1-9ubun amd64        minimal Perl system
+ii  perl-modules-5 5.22.1-9ubun all          Core Perl modules
+ii  plymouth       0.9.2-3ubunt amd64        boot animation, logger and I/O mu
+ii  plymouth-theme 0.9.2-3ubunt amd64        boot animation, logger and I/O mu
+ii  policykit-1    0.105-14.1   amd64        framework for managing administra
+ii  pollinate      4.25-0ubuntu all          seed the pseudo random number gen
+ii  popularity-con 1.64ubuntu2  all          Vote for your favourite packages
+ii  postfix        3.1.0-3ubunt amd64        High-performance mail transport a
+ii  powermgmt-base 1.31+nmu1    all          Common utils and configs for powe
+ii  procps         2:3.3.10-4ub amd64        /proc file system utilities
+ii  psmisc         22.21-2.1bui amd64        utilities that use the proc file
+ii  python-apt-com 1.1.0~beta1u all          Python interface to libapt-pkg (l
+ii  python3        3.5.1-3      amd64        interactive high-level object-ori
+ii  python3-apport 2.20.1-0ubun all          Python 3 library for Apport crash
+ii  python3-apt    1.1.0~beta1u amd64        Python 3 interface to libapt-pkg
+ii  python3-blinke 1.3.dfsg2-1b all          fast, simple object-to-object and
+ii  python3-cffi-b 1.5.2-1ubunt amd64        Foreign Function Interface for Py
+ii  python3-charde 2.3.0-2      all          universal character encoding dete
+ii  python3-comman 0.3ubuntu16. all          Python 3 bindings for command-not
+ii  python3-config 5.0.6-2      all          simple but powerful config file r
+ii  python3-crypto 1.2.3-1ubunt amd64        Python library exposing cryptogra
+ii  python3-dbus   1.2.0-3      amd64        simple interprocess messaging sys
+ii  python3-debian 0.1.27ubuntu all          Python 3 modules to work with Deb
+ii  python3-distup 1:16.04.25   all          manage release upgrades
+ii  python3-gdbm:a 3.5.1-1      amd64        GNU dbm database support for Pyth
+ii  python3-gi     3.20.0-0ubun amd64        Python 3 bindings for gobject-int
+ii  python3-idna   2.0-3        all          Python IDNA2008 (RFC 5891) handli
+ii  python3-jinja2 2.8-1        all          small but fast and easy to use st
+ii  python3-json-p 1.9-3        all          resolve JSON pointers - Python 3.
+ii  python3-jsonpa 1.19-3       all          library to apply JSON patches - P
+ii  python3-jwt    1.3.0-1ubunt all          Python 3 implementation of JSON W
+ii  python3-markup 0.23-2build2 amd64        HTML/XHTML/XML string library for
+ii  python3-minima 3.5.1-3      amd64        minimal subset of the Python lang
+ii  python3-newt   0.52.18-1ubu amd64        NEWT module for Python3
+ii  python3-oauthl 1.0.3-1      all          generic, spec-compliant implement
+ii  python3-pkg-re 20.7.0-1     all          Package Discovery and Resource Ac
+ii  python3-pretty 0.7.2-3      all          library to represent tabular data
+ii  python3-proble 2.20.1-0ubun all          Python 3 library to handle proble
+ii  python3-pyasn1 0.1.9-1      all          ASN.1 library for Python (Python
+ii  python3-pycurl 7.43.0-1ubun amd64        Python bindings to libcurl (Pytho
+ii  python3-reques 2.9.1-3      all          elegant and simple HTTP library f
+ii  python3-serial 3.0.1-1      all          pyserial - module encapsulating a
+ii  python3-six    1.10.0-3     all          Python 2 and 3 compatibility libr
+ii  python3-softwa 0.96.20.7    all          manage the repositories that you
+ii  python3-system 231-2build1  amd64        Python 3 bindings for systemd
+ii  python3-update 1:16.04.13   all          python 3.x module for update-mana
+ii  python3-urllib 1.13.1-2ubun all          HTTP library with thread-safe con
+ii  python3-yaml   3.11-3build1 amd64        YAML parser and emitter for Pytho
+ii  python3.5      3.5.2-2ubunt amd64        Interactive high-level object-ori
+ii  python3.5-mini 3.5.2-2ubunt amd64        Minimal subset of the Python lang
+ii  readline-commo 6.3-8ubuntu2 all          GNU readline and history librarie
+ii  rename         0.20-4       all          Perl extension for renaming multi
+ii  resolvconf     1.78ubuntu6  all          name server information handler
+ii  rsync          3.1.1-3ubunt amd64        fast, versatile, remote (and loca
+ii  rsyslog        8.16.0-1ubun amd64        reliable system and kernel loggin
+ii  run-one        1.17-0ubuntu all          run just one instance of a comman
+ii  screen         4.3.1-2build amd64        terminal multiplexer with VT100/A
+ii  sed            4.2.2-7      amd64        The GNU sed stream editor
+ii  sensible-utils 0.0.9ubuntu0 all          Utilities for sensible alternativ
+ii  sgml-base      1.26+nmu4ubu all          SGML infrastructure and SGML cata
+ii  shared-mime-in 1.5-2ubuntu0 amd64        FreeDesktop.org shared MIME datab
+ii  snapd          2.32.3.2     amd64        Daemon and tooling that enable sn
+ii  software-prope 0.96.20.7    all          manage the repositories that you
+ii  sosreport      3.5-1~ubuntu amd64        Set of tools to gather troublesho
+ii  squashfs-tools 1:4.3-3ubunt amd64        Tool to create and append to squa
+ii  ssh-import-id  5.5-0ubuntu1 all          securely retrieve an SSH public k
+ii  ssl-cert       1.0.37       all          simple debconf wrapper for OpenSS
+ii  strace         4.11-1ubuntu amd64        System call tracer
+ii  sudo           1.8.16-0ubun amd64        Provide limited super user privil
+ii  systemd        229-4ubuntu2 amd64        system and service manager
+ii  systemd-sysv   229-4ubuntu2 amd64        system and service manager - SysV
+ii  sysv-rc        2.88dsf-59.3 all          System-V-like runlevel change mec
+ii  sysvinit-utils 2.88dsf-59.3 amd64        System-V-like utilities
+ii  tar            1.28-2.1ubun amd64        GNU version of the tar archiving
+ii  tcpd           7.6.q-25     amd64        Wietse Venema's TCP wrapper utili
+ii  tcpdump        4.9.2-0ubunt amd64        command-line network traffic anal
+ii  telnet         0.17-40      amd64        basic telnet client
+ii  time           1.7-25.1     amd64        GNU time program for measuring CP
+ii  tmux           2.1-3build1  amd64        terminal multiplexer
+ii  tzdata         2017c-0ubunt all          time zone and daylight-saving tim
+ii  ubuntu-cloudim 2013.11.11   all          GnuPG keys of the Ubuntu Cloud Im
+ii  ubuntu-core-la 2.32.3.2     amd64        Transitional package for snapd
+ii  ubuntu-keyring 2012.05.19   all          GnuPG keys of the Ubuntu archive
+ii  ubuntu-minimal 1.361.1      amd64        Minimal core of Ubuntu
+ii  ubuntu-release 1:16.04.25   all          manage release upgrades
+ii  ubuntu-server  1.361.1      amd64        The Ubuntu Server system
+ii  ubuntu-standar 1.361.1      amd64        The Ubuntu standard system
+ii  ucf            3.0036       all          Update Configuration File(s): pre
+ii  udev           229-4ubuntu2 amd64        /dev/ and hotplug management daem
+ii  ufw            0.35-0ubuntu all          program for managing a Netfilter
+ii  uidmap         1:4.2-3.1ubu amd64        programs to help use subuids
+ii  unattended-upg 0.90ubuntu0. all          automatic installation of securit
+ii  update-manager 1:16.04.13   all          manage release upgrades
+ii  update-notifie 3.168.8      all          Files shared between update-notif
+ii  ureadahead     0.100.0-19   amd64        Read required files in advance
+ii  usbutils       1:007-4      amd64        Linux USB utilities
+ii  util-linux     2.27.1-6ubun amd64        miscellaneous system utilities
+ii  uuid-runtime   2.27.1-6ubun amd64        runtime components for the Univer
+ii  vim            2:7.4.1689-3 amd64        Vi IMproved - enhanced vi editor
+ii  vim-common     2:7.4.1689-3 amd64        Vi IMproved - Common files
+ii  vim-runtime    2:7.4.1689-3 all          Vi IMproved - Runtime files
+ii  vim-tiny       2:7.4.1689-3 amd64        Vi IMproved - enhanced vi editor
+ii  vlan           1.9-3.2ubunt amd64        user mode programs to enable VLAN
+ii  wget           1.17.1-1ubun amd64        retrieves files from the web
+ii  whiptail       0.52.18-1ubu amd64        Displays user-friendly dialog box
+ii  xauth          1:1.0.9-1ubu amd64        X authentication utility
+ii  xdg-user-dirs  0.15-2ubuntu amd64        tool to manage well known user di
+ii  xfsprogs       4.3.0+nmu1ub amd64        Utilities for managing the XFS fi
+ii  xkb-data       2.16-1ubuntu all          X Keyboard Extension (XKB) config
+ii  xml-core       0.13+nmu2    all          XML infrastructure and XML catalo
+ii  xz-utils       5.1.1alpha+2 amd64        XZ-format compression utilities
+ii  zerofree       1.0.3-1      amd64        zero free blocks from ext2, ext3
+ii  zlib1g:amd64   1:1.2.8.dfsg amd64        compression library - runtime
+
+10)
+ubuntu@ip-10-0-6-98:~$ sudo apt-get update
+Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:4 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Sources [311 kB]
+Get:5 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [803 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/main Sources [127 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [519 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [223 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [357 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [134 kB]
+Reading package lists... Done kB/s)
+ubuntu@ip-10-0-6-98:~$ sudo apt-get upgrade
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  apt apt-transport-https apt-utils console-setup console-setup-linux ifupdown
+  keyboard-configuration libapt-inst2.0 libapt-pkg5.0 libdrm-common libdrm2
+  libldap-2.4-2 libplymouth4 plymouth plymouth-theme-ubuntu-text pollinate
+  snapd sosreport ubuntu-core-launcher update-notifier-common vlan
+21 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 18.0 MB of archives.
+After this operation, 329 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libapt-pkg5.0 amd64 1.2.27 [706 kB]
+Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libapt-inst2.0 amd64 1.2.27 [55.4 kB]
+Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt amd64 1.2.27 [1,042 kB]
+Get:4 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-utils amd64 1.2.27 [196 kB]
+Get:5 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-core-launcher amd64 2.32.9 [1,566 B]
+Get:6 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 snapd amd64 2.32.9 [13.5 MB]
+Get:7 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 update-notifier-common all 3.168.9 [163 kB]
+Get:8 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 console-setup-linux all 1.108ubuntu15.4 [984 kB]
+Get:9 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 console-setup all 1.108ubuntu15.4 [117 kB]
+Get:10 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 keyboard-configuration all 1.108ubuntu15.4 [657 kB]
+Get:11 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ifupdown amd64 0.8.10ubuntu1.4 [54.9 kB]
+Get:12 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.27 [26.1 kB]
+Get:13 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm-common all 2.4.91-2~16.04.1 [4,764 B]
+Get:14 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdrm2 amd64 2.4.91-2~16.04.1 [30.8 kB]
+Get:15 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libldap-2.4-2 amd64 2.4.42+dfsg-2ubuntu3.3 [161 kB]
+Get:16 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libplymouth4 amd64 0.9.2-3ubuntu13.5 [85.2 kB]
+Get:17 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 plymouth amd64 0.9.2-3ubuntu13.5 [107 kB]
+Get:18 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 plymouth-theme-ubuntu-text amd64 0.9.2-3ubuntu13.5 [9,090 B]
+Get:19 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 pollinate all 4.33-0ubuntu1~16.04.1 [12.8 kB]
+Get:20 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 sosreport amd64 3.5-1~ubuntu16.04.3 [118 kB]
+Get:21 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 vlan amd64 1.9-3.2ubuntu1.16.04.5 [30.7 kB]
+Fetched 18.0 MB in 0s (49.8 MB/s)
+Preconfiguring packages ...
+(Reading database ... 78092 files and directories currently installed.)
+Preparing to unpack .../libapt-pkg5.0_1.2.27_amd64.deb ...
+Unpacking libapt-pkg5.0:amd64 (1.2.27) over (1.2.26) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Setting up libapt-pkg5.0:amd64 (1.2.27) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+(Reading database ... 78092 files and directories currently installed.)
+Preparing to unpack .../libapt-inst2.0_1.2.27_amd64.deb ...
+Unpacking libapt-inst2.0:amd64 (1.2.27) over (1.2.26) ...
+Preparing to unpack .../archives/apt_1.2.27_amd64.deb ...
+Unpacking apt (1.2.27) over (1.2.26) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up apt (1.2.27) ...
+Installing new version of config file /etc/apt/apt.conf.d/01autoremove ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+(Reading database ... 78092 files and directories currently installed.)
+Preparing to unpack .../apt-utils_1.2.27_amd64.deb ...
+Unpacking apt-utils (1.2.27) over (1.2.26) ...
+Preparing to unpack .../ubuntu-core-launcher_2.32.9_amd64.deb ...
+Unpacking ubuntu-core-launcher (2.32.9) over (2.32.3.2) ...
+Preparing to unpack .../snapd_2.32.9_amd64.deb ...
+Unpacking snapd (2.32.9) over (2.32.3.2) ...
+Preparing to unpack .../update-notifier-common_3.168.9_all.deb ...
+Unpacking update-notifier-common (3.168.9) over (3.168.8) ...
+Preparing to unpack .../console-setup-linux_1.108ubuntu15.4_all.deb ...
+Unpacking console-setup-linux (1.108ubuntu15.4) over (1.108ubuntu15.3) ...
+Preparing to unpack .../console-setup_1.108ubuntu15.4_all.deb ...
+Obsolete conffile /etc/init.d/keyboard-setup has been modified by you, renaming to .dpkg-bak
+Unpacking console-setup (1.108ubuntu15.4) over (1.108ubuntu15.3) ...
+Preparing to unpack .../keyboard-configuration_1.108ubuntu15.4_all.deb ...
+Unpacking keyboard-configuration (1.108ubuntu15.4) over (1.108ubuntu15.3) ...
+Preparing to unpack .../ifupdown_0.8.10ubuntu1.4_amd64.deb ...
+Unpacking ifupdown (0.8.10ubuntu1.4) over (0.8.10ubuntu1.3) ...
+Preparing to unpack .../apt-transport-https_1.2.27_amd64.deb ...
+Unpacking apt-transport-https (1.2.27) over (1.2.26) ...
+Preparing to unpack .../libdrm-common_2.4.91-2~16.04.1_all.deb ...
+Unpacking libdrm-common (2.4.91-2~16.04.1) over (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libdrm2_2.4.91-2~16.04.1_amd64.deb ...
+Unpacking libdrm2:amd64 (2.4.91-2~16.04.1) over (2.4.83-1~16.04.1) ...
+Preparing to unpack .../libldap-2.4-2_2.4.42+dfsg-2ubuntu3.3_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.3) over (2.4.42+dfsg-2ubuntu3.2) ...
+Preparing to unpack .../libplymouth4_0.9.2-3ubuntu13.5_amd64.deb ...
+Unpacking libplymouth4:amd64 (0.9.2-3ubuntu13.5) over (0.9.2-3ubuntu13.4) ...
+Preparing to unpack .../plymouth_0.9.2-3ubuntu13.5_amd64.deb ...
+Unpacking plymouth (0.9.2-3ubuntu13.5) over (0.9.2-3ubuntu13.4) ...
+Preparing to unpack .../plymouth-theme-ubuntu-text_0.9.2-3ubuntu13.5_amd64.deb ...
+Unpacking plymouth-theme-ubuntu-text (0.9.2-3ubuntu13.5) over (0.9.2-3ubuntu13.4) ...
+Preparing to unpack .../pollinate_4.33-0ubuntu1~16.04.1_all.deb ...
+Unpacking pollinate (4.33-0ubuntu1~16.04.1) over (4.25-0ubuntu1~16.04.1) ...
+Preparing to unpack .../sosreport_3.5-1~ubuntu16.04.3_amd64.deb ...
+Unpacking sosreport (3.5-1~ubuntu16.04.3) over (3.5-1~ubuntu16.04.2) ...
+Preparing to unpack .../vlan_1.9-3.2ubuntu1.16.04.5_amd64.deb ...
+Unpacking vlan (1.9-3.2ubuntu1.16.04.5) over (1.9-3.2ubuntu1.16.04.4) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Processing triggers for systemd (229-4ubuntu21.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Setting up libapt-inst2.0:amd64 (1.2.27) ...
+Setting up apt-utils (1.2.27) ...
+Setting up snapd (2.32.9) ...
+Job for snapd.seeded.service failed because the control process exited with error code. See "systemctl status snapd.seeded.service" and "journalctl -xe" for details.
+snapd.seeded.service couldn't start.
+snapd.snap-repair.service is a disabled or a static unit, not starting it.
+Setting up ubuntu-core-launcher (2.32.9) ...
+Setting up update-notifier-common (3.168.9) ...
+Setting up keyboard-configuration (1.108ubuntu15.4) ...
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+update-initramfs: deferring update (trigger activated)
+Setting up console-setup-linux (1.108ubuntu15.4) ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-1.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-13.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-14.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-15.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-2.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-3.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-4.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-7.inc ...
+Installing new version of config file /etc/console-setup/compose.ISO-8859-9.inc ...
+Setting up console-setup (1.108ubuntu15.4) ...
+update-initramfs: deferring update (trigger activated)
+Setting up ifupdown (0.8.10ubuntu1.4) ...
+Setting up apt-transport-https (1.2.27) ...
+Setting up libdrm-common (2.4.91-2~16.04.1) ...
+Setting up libdrm2:amd64 (2.4.91-2~16.04.1) ...
+Setting up libldap-2.4-2:amd64 (2.4.42+dfsg-2ubuntu3.3) ...
+Setting up libplymouth4:amd64 (0.9.2-3ubuntu13.5) ...
+Setting up plymouth (0.9.2-3ubuntu13.5) ...
+update-initramfs: deferring update (trigger activated)
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Setting up plymouth-theme-ubuntu-text (0.9.2-3ubuntu13.5) ...
+update-initramfs: deferring update (trigger activated)
+Setting up pollinate (4.33-0ubuntu1~16.04.1) ...
+Setting up sosreport (3.5-1~ubuntu16.04.3) ...
+Setting up vlan (1.9-3.2ubuntu1.16.04.5) ...
+Installing new version of config file /etc/network/if-pre-up.d/vlan ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for initramfs-tools (0.122ubuntu8.11) ...
+update-initramfs: Generating /boot/initrd.img-4.4.0-1062-aws
+W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.
+
