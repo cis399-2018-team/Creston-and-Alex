@@ -1,0 +1,102 @@
+#Website public addresses
+
+agent1
+ec2-52-39-81-191.us-west-2.compute.amazonaws.com
+
+agent2
+ec2-54-244-42-209.us-west-2.compute.amazonaws.com
+----
+#logs showing access to website.
+
+ubuntu@ip-10-0-6-98:/var/log/apache2$ cat access.log
+70.82.21.42 - - [23/Jul/2018:07:38:24 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+189.52.134.69 - - [23/Jul/2018:08:41:23 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+218.211.168.176 - - [23/Jul/2018:09:11:06 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0"
+31.15.95.218 - - [23/Jul/2018:11:22:50 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+66.240.205.34 - - [23/Jul/2018:12:38:14 +0000] "Gh0st\xad" 400 0 "-" "-"
+200.204.91.115 - - [23/Jul/2018:14:07:49 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+178.46.128.97 - - [23/Jul/2018:14:21:40 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+206.189.141.45 - - [23/Jul/2018:15:03:59 +0000] "GET /w00tw00t.at.blackhats.romanian.anti-sec:) HTTP/1.1" 404 497 "-" "ZmEu"
+206.189.141.45 - - [23/Jul/2018:15:04:00 +0000] "GET /phpMyAdmin/scripts/setup.php HTTP/1.1" 404 484 "-" "ZmEu"
+206.189.141.45 - - [23/Jul/2018:15:04:00 +0000] "GET /phpmyadmin/scripts/setup.php HTTP/1.1" 404 484 "-" "ZmEu"
+206.189.141.45 - - [23/Jul/2018:15:04:01 +0000] "GET /pma/scripts/setup.php HTTP/1.1" 404 477 "-" "ZmEu"
+206.189.141.45 - - [23/Jul/2018:15:04:01 +0000] "GET /myadmin/scripts/setup.php HTTP/1.1" 404 481 "-" "ZmEu"
+206.189.141.45 - - [23/Jul/2018:15:04:02 +0000] "GET /MyAdmin/scripts/setup.php HTTP/1.1" 404 481 "-" "ZmEu"
+177.68.113.233 - - [23/Jul/2018:15:29:20 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+197.245.184.214 - - [23/Jul/2018:15:36:17 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+41.36.12.132 - - [23/Jul/2018:16:18:22 +0000] "POST /GponForm/diag_Form?images/ HTTP/1.1" 400 0 "-" "Gemini/2.0"
+41.36.12.132 - - [23/Jul/2018:16:18:27 +0000] "POST /GponForm/diag_Form?images/ HTTP/1.1" 400 0 "-" "Gemini/2.0"
+41.36.12.132 - - [23/Jul/2018:16:18:31 +0000] "POST /GponForm/diag_Form?images/ HTTP/1.1" 400 0 "-" "Gemini/2.0"
+103.251.251.11 - - [23/Jul/2018:17:33:07 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+14.192.204.218 - - [23/Jul/2018:18:21:39 +0000] "GET / HTTP/1.0" 200 270 "-" "-"
+139.162.108.53 - - [23/Jul/2018:18:38:44 +0000] "GET / HTTP/1.1" 200 270 "-" "Go-http-client/1.1"
+85.14.22.150 - - [23/Jul/2018:19:55:53 +0000] "GET / HTTP/1.1" 200 251 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+73.180.24.167 - - [23/Jul/2018:20:20:42 +0000] "GET /index.html HTTP/1.1" 200 338 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+73.180.24.167 - - [23/Jul/2018:20:20:42 +0000] "GET /favicon.ico HTTP/1.1" 404 539 "http://ec2-54-213-0-248.us-west-2.compute.amazonaws.com/index.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+159.89.148.43 - - [23/Jul/2018:20:42:40 +0000] "GET / HTTP/1.1" 200 529 "-" "Mozilla/5.0 zgrab/0.x"
+103.47.239.205 - - [23/Jul/2018:21:06:41 +0000] "GET / HTTP/1.1" 200 725 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+88.250.187.164 - - [23/Jul/2018:21:34:20 +0000] "GET / HTTP/1.1" 200 725 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+...
+...
+...
+
+----
+#load-balancer url
+
+http://creston-and-alex-lb-1867896422.us-west-2.elb.amazonaws.com/
+
+
+------
+#results of disabling or or both instances on the load balancer.
+
+If I disable one, it still works. If I disable both it goes offline. If i turn on one and then both it goes back to working. Rinse repeat.
+Seems pretty intuitive. Tried shipping changes while they were shut down and it still worked.
+----
+#healthcheck logs
+
+Agent 1 logs...
+
+...
+...
+10.0.6.40 - - [24/Jul/2018:01:26:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:26:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:26:31 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:27:00 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:27:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:27:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+...
+...
+
+Agent 2 logs...
+
+...
+...
+10.0.6.40 - - [24/Jul/2018:01:20:31 +0000] "GET / HTTP/1.1" 200 343 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+10.0.6.29 - - [24/Jul/2018:01:21:00 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:21:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:21:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:21:31 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:22:00 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:22:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:22:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:22:31 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:23:00 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:23:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:23:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:23:31 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:24:00 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:24:01 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.29 - - [24/Jul/2018:01:24:30 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+10.0.6.40 - - [24/Jul/2018:01:24:31 +0000] "GET /index.html HTTP/1.1" 200 343 "-" "ELB-HealthChecker/1.0"
+...
+...
+-----
+
+#code for replicating files. /html/ contains index.html 
+file{'/var/www/html/':
+		ensure  => directory,
+    recurse => true,
+		source  => ["puppet:///modules/apache/html",],
+		require => Package['apache2'],
+		notify  => Service['apache2'],
+	}
