@@ -1,4 +1,3 @@
-<h1> Network In </h1>
 You are receiving this email because your Amazon CloudWatch Alarm "awsec2-i-0bf568823fa4eb5e0-High-Network-In" in the US West (Oregon) region has entered the ALARM state, because "Threshold Crossed: 1 datapoint [68508.4 (04/08/18 01:39:00)] was greater than or equal to the threshold (25000.0)." at "Saturday 04 August, 2018 01:49:16 UTC".
 
 Alarm Details:
