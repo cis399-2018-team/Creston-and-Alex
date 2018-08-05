@@ -1,38 +1,30 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
-{\fonttbl\f0\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+<h1> Network In </h1>
+You are receiving this email because your Amazon CloudWatch Alarm "awsec2-i-0bf568823fa4eb5e0-High-Network-In" in the US West (Oregon) region has entered the ALARM state, because "Threshold Crossed: 1 datapoint [68508.4 (04/08/18 01:39:00)] was greater than or equal to the threshold (25000.0)." at "Saturday 04 August, 2018 01:49:16 UTC".
 
-\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
-You are receiving this email because your Amazon CloudWatch Alarm "awsec2-i-0bf568823fa4eb5e0-High-Network-In" in the US West (Oregon) region has entered the ALARM state, because "Threshold Crossed: 1 datapoint [68508.4 (04/08/18 01:39:00)] was greater than or equal to the threshold (25000.0)." at "Saturday 04 August, 2018 01:49:16 UTC".\cb1 \
-\
-\cb3 Alarm Details:\cb1 \
-\cb3 - Name: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0awsec2-i-0bf568823fa4eb5e0-High-Network-In\cb1 \
-\cb3 - Description: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Created from EC2 Console\cb1 \
-\cb3 - State Change: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0OK -> ALARM\cb1 \
-\cb3 - Reason for State Change: \'a0\'a0\'a0Threshold Crossed: 1 datapoint [68508.4 (04/08/18 01:39:00)] was greater than or equal to the threshold (25000.0).\cb1 \
-\cb3 - Timestamp: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Saturday 04 August, 2018 01:49:16 UTC\cb1 \
-\cb3 - AWS Account: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0006170570170\cb1 \
-\
-\cb3 Threshold:\cb1 \
-\cb3 - The alarm is in the ALARM state when the metric is GreaterThanOrEqualToThreshold 25000.0 for 300 seconds. \cb1 \
-\
-\cb3 Monitored Metric:\cb1 \
-\cb3 - MetricNamespace: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0AWS/EC2\cb1 \
-\cb3 - MetricName: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0NetworkIn\cb1 \
-\cb3 - Dimensions: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0[InstanceId = i-0bf568823fa4eb5e0]\cb1 \
-\cb3 - Period: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0300 seconds\cb1 \
-\cb3 - Statistic: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0Average\cb1 \
-\cb3 - Unit: \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0not specified\cb1 \
-\
-\
-\
-\cb3 State Change Actions:\cb1 \
-\cb3 - OK: \cb1 \
-\cb3 - ALARM: [arn:aws:sns:us-west-2:006170570170:CrestonAlexMonitoring]\cb1 \
-\cb3 - INSUFFICIENT_DATA: \cb1 \
-\
-\cb3 --}
+Alarm Details:
+- Name:                       awsec2-i-0bf568823fa4eb5e0-High-Network-In
+- Description:                Created from EC2 Console
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 1 datapoint [68508.4 (04/08/18 01:39:00)] was greater than or equal to the threshold (25000.0).
+- Timestamp:                  Saturday 04 August, 2018 01:49:16 UTC
+- AWS Account:                006170570170
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanOrEqualToThreshold 25000.0 for 300 seconds. 
+
+Monitored Metric:
+- MetricNamespace:                     AWS/EC2
+- MetricName:                          NetworkIn
+- Dimensions:                          [InstanceId = i-0bf568823fa4eb5e0]
+- Period:                              300 seconds
+- Statistic:                           Average
+- Unit:                                not specified
+
+
+
+State Change Actions:
+- OK: 
+- ALARM: [arn:aws:sns:us-west-2:006170570170:CrestonAlexMonitoring]
+- INSUFFICIENT_DATA: 
+
+--
