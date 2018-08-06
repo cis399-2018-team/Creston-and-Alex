@@ -159,3 +159,37 @@ State Change Actions:
 - INSUFFICIENT_DATA: 
 
 --
+
+You are receiving this email because instance i-0cca67093ee51de26 in region US West (Oregon) has failed an instance status check for at least 2 period(s) of 60 seconds at "Monday 06 August, 2018 02:51:41 UTC". You can view status check details about this instance by navigating to the EC2 console at https://console.aws.amazon.com/ec2/home?region=us-west-2#s=Instances, selecting the instance and clicking on the Status Check tab.
+
+More details about this alarm are provided below:
+
+---
+
+Alarm Details:
+- Name:                       awsec2-i-0cca67093ee51de26-High-Status-Check-Failed-Instance-
+- Description:                Created from EC2 Console
+- State Change:               INSUFFICIENT_DATA -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 datapoints [1.0 (06/08/18 02:50:00), 1.0 (06/08/18 02:49:00)] were greater than or equal to the threshold (1.0).
+- Timestamp:                  Monday 06 August, 2018 02:51:41 UTC
+- AWS Account:                006170570170
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanOrEqualToThreshold 1.0 for 60 seconds. 
+
+Monitored Metric:
+- MetricNamespace:                     AWS/EC2
+- MetricName:                          StatusCheckFailed_Instance
+- Dimensions:                          [InstanceId = i-0cca67093ee51de26]
+- Period:                              60 seconds
+- Statistic:                           Maximum
+- Unit:                                not specified
+
+
+
+State Change Actions:
+- OK: 
+- ALARM: [arn:aws:sns:us-west-2:006170570170:CrestonAlexMonitoring]
+- INSUFFICIENT_DATA: 
+
+--
